@@ -1,0 +1,95 @@
+/* Gaya untuk latar belakang gambar */
+.image {
+    filter: blur(2px);
+    -webkit-filter: blur(3px);
+    height: 730px;
+    width: 100%;
+    object-fit: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Gaya untuk box register */
+.register {
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparan hitam */
+    color: floralwhite !important;;
+    font-weight: bold;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    max-width: 500px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+}
+
+/* Gaya untuk input */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 90%;
+    max-width: 400px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    padding: 14px 18px;
+    color: #333;
+    font-size: 16px;
+    margin-top: 20px;
+    background: #f9f9f9;
+    text-align: center;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+    outline: none;
+}
+
+/* Gaya untuk tombol submit */
+input[type="submit"] {
+    padding: 14px 35px;
+    color: white;
+    background-color: #e7d03a; /* Warna kuning menyala */
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    margin-top: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(231, 208, 58, 0.4);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efek hover pada tombol submit */
+input[type="submit"]:hover {
+    background-color: #d4bd34; /* Warna kuning lebih gelap */
+    transform: scale(1.05);
+}
+
+/* Efek active pada tombol submit */
+input[type="submit"]:active {
+    background-color: #c3ac2f; /* Warna kuning lebih gelap saat ditekan */
+    transform: scale(1);
+}
+
+/* Gaya untuk link */
+a {
+    color: white;
+    text-decoration: underline;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: wheat;
+}

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> MP NGASAL </title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="icon" href="Images/ff.png" type="image/png">
+<style>.profile-img {
+    width: 40px;        /* Adjust width */
+    height: 40px;       /* Adjust height */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover;  /* Ensures the image fits neatly within the circle */
+    cursor: pointer;   /* Makes the cursor a pointer to indicate it's clickable */
+}
+
+/* Dropdown content hidden by default */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px 0;
+    min-width: 160px;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+</style>
+   </head>
+<body>
+  <!-- Move to up button -->
+  <div class="scroll-button">
+    <a href="#home"><i class="fas fa-arrow-up"></i></a>
+  </div>
+  <!-- navgaition menu -->
+  <nav>
+    <div class="navbar">
+        <div class="logo"><a href="#">Andin Universe</a></div>
+        <ul class="menu">
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#about">Tentang Kami</a></li>
+            <li><a href="#skills">Ulasan Pengguna</a></li>
+            <li><a href="#services">Unggulan</a></li>
+            <li><a href="#contact">Kontak</a></li>
+            <div class="cancel-btn">
+                <i class="fas fa-times"></i>
+            </div>
+        </ul>
+        
+        <!-- Use a div instead of li to avoid the bullet point -->
+        <div class="profile-dropdown">
+            <a href="javascript:void(0)" class="profile-btn">
+                <img src="propil.webp" alt="Profile Picture" class="profile-img">
+            </a>
+            <div class="dropdown-content">
+                <a href="#">Edit Profil</a>
+                <a href="index.html">Logout</a>
+            </div>
+        </div>
+    </div>
+    <div class="menu-btn">
+        <i class="fas fa-bars"></i>
+    </div>
+</nav>
+
+
+
+  <br> <br> <br> <br> <br> <br>
+  <section class="search-bar">
+    <div class="search-container">
+      <form id="searchForm" action="#" method="GET">
+        <div class="form-group">
+          <label for="location">Lokasi:</label>
+          <select id="location" name="location">
+            <option value="all">Semua Lokasi</option>
+            <option value="Purwokerto">Purwokerto</option>
+            <option value="Banyumas">Banyumas</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="house">Jenis Rumah:</label>
+          <select id="house" name="house">
+            <option value="all">Semua Jenis</option>
+            <option value="Guesthouse">Guesthouse</option>
+            <option value="Hotel">Hotel</option>
+            <option value="Villa">Villa</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="price">Harga:</label>
+          <select id="price" name="price">
+            <option value="all">Semua Harga</option>
+            <option value="murah">Di bawah 500 Juta</option>
+            <option value="sedang">500 Juta - 1 Miliar</option>
+            <option value="mahal">Di atas 1 Miliar</option>
+          </select>
+        </div>
+        <button id="search-btn" type="button">Cari</button>
+      </form>
+    </div>
+  </section>
+  
+  
+  <div id="results"></div>
+  </section>
+  
+  
+  
+
+<!-- Home Section -->
+ <section class="home" id="home">
+  
+   <div class="home-content">
+     <div class="text">
+       <div class="text-one">Halo Para Travelers,</div>
+       <div class="text-two">AndinMechariel</div>
+       <div class="text-three">Pengembang Website 'Nightscape Explosion' </div>
+       <div class="text-four">Dari Other World</div>
+     </div>
+     
+   </div>
+   
+ </section>
+
+<!-- About Section Start -->
+<section class="about" id="about">
+  <div class="content">
+    <div class="title"><span>Tentang Kami</span></div>
+  <div class="about-details">
+    <div class="left">
+      <img src="fff.png" alt="">
+    </div>
+    <div class="right">
+      <div class="topic">Rerinkarnasi adalah gaya hidup saya, isekai adalah tempat saya.
+      </div>
+      <p>Sebagai pembukaan saya adalah reinkarnasi tulen. Entah seberapa lama saya hidup yang jelas ini reinkarnasi kesebelas.
+         Nah di Kehidupan ini saya sangat berharap meski kekuatan saya tak kembali setidaknya saya bisa berguna di dunia ini, 
+         saya juga harus sadar ini bukan Other World dunia dimana orang terbang adalah hal biasa.
+         Disini anda harus berjalan tanpa rasa, dan jangan terpaku pada kebosanan yang melanda.
+ Tapi saya akan membuat negara saya sendiri dan berpisah dengan bumi ini,Ha.Ha.Ha.
+ Btw,saya butuh tenaga kerja yang bisa bantu buat model 3D.
+      </p>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- My Skill Section Start -->
+<section class="skills" id="skills">
+ <div class="content">
+   <div class="title"><span>Ulasan Pengguna</span></div>
+   <div class="skills-details">
+     <div class="text">
+       <div class="topic">GuestHouse</div>
+       <p>Kami adlaj penyedia informasi terpercaya mengenai GuestHouse yang tersebar di sekitar Banyumas</p>
+       <div class="experience">
+         <div class="num">10</div>
+         <div class="exp">Years Of <br> Experience</div>
+       </div>
+     </div>
+     <div class="boxes">
+       <div class="box">
+         <div class="topic">Sangat Membantu</div>
+         <div class="per">100%</div>
+       </div>
+       <div class="box">
+         <div class="topic">Relevan</div>
+         <div class="per">100%</div>
+       </div>
+       <div class="box">
+         <div class="topic">Responsif</div>
+         <div class="per">100%</div>
+       </div>
+       <div class="box">
+         <div class="topic">Terpercaya</div>
+         <div class="per">100%</div>
+       </div>
+     </div>
+   </div>
+ </div>
+</section>
+
+<!-- My Services Section Start -->
+<section class="services" id="services">
+  <div class="content">
+    <div class="title"><span>Unggulan</span></div>
+    <div class="boxes">
+      <a href="index11.html" class="box">
+        <div class="icon">
+          <i class="fas fa-thumbs-up"></i>
+        </div>
+        <img src="Images/c1.png" alt="Foto u" class="box-image">
+        <div class="topic">Di Rekomendasikan</div>
+        <p>Blablabla adalah tempat yang kami rekomendasikan untuk tujuan penginapan anda</p>
+      </a>
+      <a href="index12.html" class="box">
+        <div class="icon">
+          <i class="fas fa-eye"></i>
+        </div>
+        <img src="Images/c1.png" alt="Foto k" class="box-image">
+        <div class="topic">Paling Banyak Dikunjungi</div>
+        <p>Blablabalbla adlah tempat yang paling banyk dikunjungi oleh wisatawan</p>
+      </a>
+      <a href="index13.html" class="box">
+        <div class="icon">
+          <i class="fas fa-map-marked-alt"></i>
+        </div>
+        <img src="Images/c1.png" alt="Foto p" class="box-image">
+        <div class="topic">Dekat dengan Pusat Kota</div>
+        <p>blablabla adalah tempat yang paling dekat dengan pusat kota</p>
+      </a>
+      <a href="index14.html" class="box">
+        <div class="icon">
+          <i class="fas fa-coffee"></i>
+        </div>
+        <img src="Images/c1.png" alt="Foto kl" class="box-image">
+        <div class="topic">Dekat dengan Pusat Kuliner</div>
+        <p>blablabla adalah tempat yang paling dekat dengan pusat kuliner banyumas</p>
+      </a>
+      <a href="index15.html" class="box">
+        <div class="icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <img src="Images/c1.png" alt="Foto rate" class="box-image">
+        <div class="topic">Rating Tertinggi</div>
+        <p>blablabla adalah tempat yag emiliki rating tetinggi dari segala guesthouse di banyumad</p>
+      </a>
+      <a href="populer.php" class="box">
+        <div class="icon">
+          <i class="fas fa-crown"></i>
+        </div>
+        <img src="Images/c1.png" alt="Foto tp" class="box-image">
+        <div class="topic">Terpopuler</div>
+        <p>blablabla adlah tempat terpopuler yang menarik banyak isatawan</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Contact Me section Start -->
+<section class="contact" id="contact">
+  <div class="content">
+    <div class="title"><span>Hubungi Kami</span></div>
+    <div class="text">
+      <div class="topic">Punya pertanyaan atau komentar?</div>
+      <p>Kami siap menampung pernyataan kalian❤</p>
+      <div class="button">
+        <a href="https://wa.me/088220283974" target="_blank">
+          <button>Let's Chat</button>
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- Footer Section Start -->
+<footer>
+  <div class="text">
+    <span>Dibuat oleh <a href="#">TIM PEMROGRAMANOrangkerend😎</a> | &#169; 2100 All Rights Reserved</span>
+  </div>
+</footer>
+<script>// Toggle the visibility of the dropdown when the profile image is clicked
+    document.querySelector('.profile-btn').addEventListener('click', function() {
+        var dropdownContent = document.querySelector('.dropdown-content');
+        dropdownContent.style.display = (dropdownContent.style.display === 'block') ? 'none' : 'block';
+    });
+    </script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Reservasi Hotel</title>
+    <link rel="icon" href="Images/ff.png" type="image/png">
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #d9d9d9;
+    background-image: url('ds.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+
+
+        header {
+    background-color: #2f2f2f; 
+    color: white;
+    padding: 20px 40px; 
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
+    border-bottom: 2px solid #5a7d5c; 
+    border-radius: 10px; 
+    transition: all 0.3s ease; 
+}
+
+header h1 {
+    font-size: 2.5em; 
+    font-family: 'Poppins', sans-serif; 
+    letter-spacing: 1.2px; 
+    text-transform: uppercase; 
+    margin: 0;
+}
+
+header:hover {
+    background-color: #3a6e56; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-3px); 
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 15px 30px; 
+    }
+
+    header h1 {
+        font-size: 2em; 
+    }
+}
+
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .hotel-info {
+    position: relative;
+    padding: 50px;
+    height: 500px;  
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background-position 1s ease; 
+}
+        .hotel-description {
+            margin-bottom: 20px;
+        }
+
+        .hotel-description h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .hotel-description p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+.hotel-images {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+    gap: 20px; 
+    flex-wrap: wrap; 
+    text-align: center;
+}
+
+.hotel-image-container {
+    flex: 1;  
+    min-width: 300px;  
+}
+
+.hotel-image {
+    width: 100%;
+    height: 200px;  
+    object-fit: cover; 
+    border-radius: 10px;
+    border: 4px solid #ccc; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease; 
+}
+
+.hotel-image:hover {
+    border-color: #757b81; 
+    box-shadow: 0px 6px 15px rgba(93, 96, 98, 0.3); 
+    transform: scale(1.02); 
+}
+
+.map-container {
+    flex: 1;
+    min-width: 300px;  
+}
+.map-image:hover {
+    border-color: #757b81; 
+    box-shadow: 0px 6px 15px rgba(93, 96, 98, 0.3); 
+    transform: scale(1.02); 
+}
+
+.map-image {
+    width: 100%;
+    height: 200px;  
+    object-fit: cover;  
+    border-radius: 10px;
+    border: 4px solid #ccc; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease; 
+}
+
+.map-container p {
+    font-size: 1.1em;
+    color: black; 
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none; 
+    transition: color 0.3s ease; 
+    text-shadow: 0 0 5px #9b59b6, 0 0 10px #9b59b6, 0 0 15px #9b59b6, 0 0 20px #9b59b6, 0 0 30px #9b59b6, 0 0 40px #9b59b6, 0 0 50px #9b59b6; /* Efek glow ungu */
+}
+
+.map-container p:hover {
+    color: #ffffff; 
+    text-shadow: 0 0 5px #9b59b6, 0 0 10px #9b59b6, 0 0 15px #9b59b6, 0 0 20px #9b59b6, 0 0 30px #9b59b6, 0 0 40px #9b59b6, 0 0 50px #9b59b6; /* Glow ungu saat hover */
+}
+.map-container a {
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+    .hotel-images {
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .hotel-image-container,
+    .map-container {
+        width: 100%;  
+    }
+
+    .hotel-image,
+    .map-image {
+        height: 150px; 
+    }
+}
+.reservation-section {
+    display: flex;
+    justify-content: space-between; 
+    gap: 20px; 
+    margin-top: 30px;
+    padding: 100px;
+    flex-wrap: wrap; 
+}
+
+.reservation-form {
+    background-color: #f9f9f9;
+    padding: 25px 20px;
+    width: 100%;
+    max-width: 550px; 
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background: linear-gradient(135deg, #e0e0e0, #ffffff);
+}
+
+.reservation-form h2 {
+    font-size: 2em;
+    font-weight: 600;
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.reservation-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #555;
+}
+
+.reservation-form input,
+.reservation-form select {
+    width: 90%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1.1em;
+    background-color: #fff;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reservation-form input:focus,
+.reservation-form select:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+}
+
+.reservation-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.reservation-form button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+.reservation-form button:active {
+    background-color: #388e3c;
+    transform: translateY(0);
+}
+
+.reviews {
+    max-width: 550px; 
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+.reviews h3 {
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+    text-align: center;
+}
+
+.reviews p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.reviews .quote {
+    font-size: 1.2em;
+    font-style: italic;
+    color: #4CAF50;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .reservation-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .reservation-form {
+        max-width: 100%;
+    }
+
+    .reviews {
+        max-width: 100%;
+    }
+}
+
+
+        /* Responsiveness */
+        @media screen and (max-width: 768px) {
+            .hotel-images {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hotel-image-container,
+            .map-container {
+                width: 100%; 
+            }
+        }
+     
+        .room-description {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    width: 100%; 
+    max-width: 100%; 
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.room-description h3 {
+    font-size: 28px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.room-description ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: space-between;
+}
+
+.room-description ul li {
+    background-color: #fff;
+    padding: 20px; 
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 20px); 
+    box-sizing: border-box;
+    min-width: 400px; 
+    max-width: 480px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto; 
+}
+
+.room-description ul li strong {
+    font-size: 18px;
+    color: #0E2431;
+    font-weight: 600;
+}
+
+.room-description ul li ul {
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.room-description ul li ul li {
+    font-size: 14px;
+    color: #555;
+}
+
+.room-description .price {
+    font-size: 16px;
+    color: #007BFF;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .room-description ul li {
+        width: calc(50% - 20px); 
+    }
+}
+
+@media (max-width: 480px) {
+    .room-description ul li {
+        width: 100%; 
+    }
+}
+
+footer {
+    position: relative; 
+    padding: 20px;
+    text-align: center; 
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; 
+            background-color: #2f2f2f;
+            margin-top: auto; 
+}
+
+footer p {
+    margin: 10px 0 0;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.whatsapp-button {
+    position: absolute; 
+    bottom: 20px; 
+    right: 20px; 
+    padding: 10px 20px;
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E; 
+    transform: scale(1.05); 
+    text-decoration: none;
+    color: white;
+}
+
+.whatsapp-button:active {
+    animation: pulse-animation 0.5s; 
+    text-decoration: none;
+    color: white;
+}
+
+/* Animasi klik */
+@keyframes pulse-animation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.stars {
+    color: gold; 
+    font-size: 1rem; 
+    margin-left: 5px; 
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Selamat Datang di HoteL OrAnGKERENSEALAMSEMESTA!</h1>
+    </header>
+
+    <section class="hotel-info">
+        <div class="hotel-description">
+            <h2>Tentang Hotel Kami</h2>
+            <p>Hotel OrAnGKERENSEALAMSEMESTA adalah tempat yang sempurna untuk menginap selama perjalanan Anda. Dengan fasilitas lengkap, kamar nyaman, dan pelayanan terbaik, kami siap menyambut Anda. Nikmati suasana nyaman dan pelayanan ramah di hotel kami, yang terletak di pusat kota.</p>
+        </div>
+
+        <div class="hotel-images">
+            <div class="hotel-image-container">
+                <img src="c4.png" alt="Hotel Indah" class="hotel-image">
+            </div>
+
+            <div class="map-container">
+                <a href="https://www.google.com/maps?q=Hotel+Indah" target="_blank">
+                    <img src="cv.avif" alt="Lokasi Hotel" class="map-image">
+                    <p>Klik untuk melihat lokasi di Google Maps</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <div class="room-description"><br>
+        <h3>Deskripsi dan Harga Kamar</h3><br>
+        <ul>
+            <li>
+                <strong>Kamar Single:</strong>
+                <span class="price">Rp 300,000/malam</span>
+                <ul>
+                    <li>Fasilitas: 1 tempat tidur single, AC, Wi-Fi gratis, kamar mandi dalam.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Kamar Double:</strong>
+                <span class="price">Rp 500,000/malam</span>
+                <ul>
+                    <li>Fasilitas: 1 tempat tidur double, AC, TV kabel, Wi-Fi gratis, kamar mandi dalam.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Suite:</strong>
+                <span class="price">Rp 1,000,000/malam</span>
+                <ul>
+                    <li>Fasilitas: Ruang tamu terpisah, 1 tempat tidur king-size, AC, TV kabel, Wi-Fi gratis, minibar, kamar mandi dalam.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Transportasi Tempuh</strong>
+                <span class="price">Umum</span>
+                <ul>
+                    <li>Angkot, Bus, Trans Banyumas, Kereta, Ojek lokal, Becak</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Rating:</strong>
+                <span class="price">Bintang 4  
+                    <span class="stars"> &#9733; &#9733; &#9733; &#9733; &#9734;</span>
+                </span>
+                <ul>
+                    <li>Rating yang kami peroleh sudah dilegalisasi sesuai standar akomodassi penginapan, yang didalpat melalui berbagai tes serta pengendaian kualitas</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Detail Harga dan Promosi:</strong>
+                <span class="price">Jenis-jenis</span>
+                <ul><li>
+                    <span class="detail">• Tarif kamar Harian: 300k - 1jt/malam, Mingguan: 5jt</span>
+                    <span class="detail">• Paket Promosi Honeymoon, Meeting, atau Staycation: 8,7jt</span>
+                    <span class="detail">• Biaya Tambahan Extra Bed, laundry, dll: 80rb</span></li>
+                </li>
+            </li>
+        </ul>
+    </div>
+    
+<br>
+
+    <section class="reservation-section">
+        <!-- Form Pemesanan -->
+        <div class="reservation-form">
+            <h2>Reservasi Hotel</h2>
+            <form action="submit-reservation.php" method="POST">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="checkin-date">Tanggal Check-in:</label>
+                <input type="date" id="checkin-date" name="checkin-date" required>
+    
+                <label for="checkout-date">Tanggal Check-out:</label>
+                <input type="date" id="checkout-date" name="checkout-date" required>
+    
+                <label for="room-type">Tipe Kamar:</label>
+                <select id="room-type" name="room-type">
+                    <option value="single">Kamar Single</option>
+                    <option value="double">Kamar Double</option>
+                    <option value="suite">Suite</option>
+                </select>
+                <button type="submit">Pesan Sekarang</button>
+            </form>
+        </div>
+        <div class="reviews">
+            <h3>Ulasan Terpopuler</h3>
+            <p class="quote">"HOTelnyA GG POL ENAK BANGET buat kabur dari polisi wkwkwk." – Orangkerenstandar</p>
+            <p>Hotel kami menyediakan pengalaman menginap yang nyaman dan super gila dan memuaskan. Banyak tamu yang memuji kualitas layanan kami, fasilitas lengkap, dan suasana yang sangat menyenangkan.</p>
+            <p class="quote">"Peak cik badas max, pelayannya juga ramah, bersih, berelas, fasilitas no bobrok bintang sejuta pokoknya" – Orangpalingkeren</p>
+            <p>Hotel kami memang bukan kaleng-kaleng tapi emas-emas, semua memuji hotel kami, kami di atas segalanya</p>
+            <p class="quote">"Bagus sekali, saya menantikan kunjungan selanjutnya dan menjadi pelanggan tetap holet eh hotel hahihihi ini, tidak menyesal untuk pengalam yang luaar biasa itu ^w^" – OrAnGKERENSEALAMSEMESTA</p>
+        </div>
+    </section>
+    <footer>
+        <a href="https://wa.me/088220283974" class="whatsapp-button">Hubungi kami via WA</a>
+
+        <p>&copy; 2024 Hotel Orangterkeren | All rights reserved</p>
+        <p>Kontak: info@apalahhotel.com | Telp: +62 666-66666</p>
+
+    </footer>
+    <script>document.addEventListener("DOMContentLoaded", function () {
+        const section = document.querySelector('.hotel-info');
+        const images = [
+            'vu.png',  
+            'vuy.png',   
+            'vuya.png'    
+        ];
+        let currentImage = 0;
+    
+        function changeBackground() {
+            section.style.backgroundImage = `url('${images[currentImage]}')`;
+    
+            currentImage = (currentImage + 1) % images.length;
+        }
+    
+        setInterval(changeBackground, 5000); 
+    });
+
+    </script>
+</body>
+</html>
